@@ -18,6 +18,8 @@ public class CeilingNumber {
             }
             else if(arr[mid]<target){
                 // answer would lay on the right half of the array cause mid element is less than target.
+                // at the end if there is only one element in the array, and target is still greater than the current mid element,
+                // this will make the left greater than the right and break the loop and our possible answer would be returend.
                 left=mid+1;
             }
             else if(arr[mid]>target){
