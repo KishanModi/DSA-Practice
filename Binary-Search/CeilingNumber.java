@@ -1,3 +1,4 @@
+// search the next large number of target in the array.
 public class CeilingNumber {
     public static void main(String[] args) {
         int[] arr ={2,3,5,9,13,14,17,18};
@@ -12,12 +13,19 @@ public class CeilingNumber {
         while(left<=right){
             int mid = left+(right-left)/2;
             if(arr[mid]==target){
+                // mid element is our actual answer.
                 return target;
             }
             else if(arr[mid]<target){
+                // answer would lay on the right half of the array cause mid element is less than target.
                 left=mid+1;
             }
             else if(arr[mid]>target){
+                //storing the possible answer here, if mid element is greater than the target there would
+                // be a chance that this number is our possible answer
+                // then we look for another pottential answer by looking on the left side of the mid
+                // if we dont find any number between the possible answer and target
+                // then possible answer is our actual answer
                 possibleAns=arr[mid];
                 right=mid-1;
             }
