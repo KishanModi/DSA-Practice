@@ -34,3 +34,19 @@ void rearrange(int arr[], int n) {
             arr[i++] = negatives.get(k++);
         }
     }
+
+// better approach using the hashset
+
+public String isSubset( long a1[], long a2[], long n, long m) {
+        Boolean isSet=true;
+        Set<Long> set = new HashSet<>();
+        for(long i:a1){
+            set.add(i);
+        }
+        
+        for(long j:a2){
+            if(!set.contains(j)){
+                isSet=false;
+            }
+        }
+        return isSet ? "Yes" :"No";
